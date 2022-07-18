@@ -18,9 +18,9 @@
 use std::sync::Arc;
 
 use clap::Parser;
+use cloudwalk_network_runtime::Block;
 use fc_db::frontier_database_dir;
 use frame_benchmarking_cli::BenchmarkCmd;
-use cloudwalk_network_runtime::Block;
 use sc_cli::{ChainSpec, RuntimeVersion, SubstrateCli};
 use sc_service::{DatabaseSource, PartialComponents};
 
