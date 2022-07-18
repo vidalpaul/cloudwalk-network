@@ -1,14 +1,14 @@
 [package]
-authors = ['Substrate DevHub <https://github.com/substrate-developer-hub>']
+authors = ['CloudWalk']
 build = 'build.rs'
-description = 'A fresh FRAME-based Substrate node, ready for hacking.'
+description = 'A fresh FRAME-based Substrate node with Ethereum-like capabilities'
 edition = '2021'
 homepage = 'https://substrate.io'
-license = 'Unlicense'
-name = 'frontier-template-node'
+license = 'GPL-3.0'
+name = 'cloudwalk-network-node'
 publish = false
-repository = 'https://github.com/substrate-developer-hub/frontier-node-template/'
-version = '0.0.0'
+repository = 'https://github.com/cloudwalk/cloudwalk-network'
+version = '1.0.2'
 
 [package.metadata.docs.rs]
 targets = ['x86_64-unknown-linux-gnu']
@@ -19,11 +19,11 @@ version = '3.0.0'
 
 
 [features]
-aura = ['frontier-template-runtime/aura']
+aura = ['cloudwalk-network-runtime/aura']
 default = ['aura']
-manual-seal = ['frontier-template-runtime/manual-seal']
+manual-seal = ['cloudwalk-network-runtime/manual-seal']
 rpc_binary_search_estimate = ['fc-rpc/rpc_binary_search_estimate']
-runtime-benchmarks = ['frontier-template-runtime/runtime-benchmarks']
+runtime-benchmarks = ['cloudwalk-network-runtime/runtime-benchmarks']
 
 [dependencies]
 async-trait = '0.1'
@@ -108,7 +108,7 @@ branch = 'substrate-cloudwalk-v1.0.2'
 git = 'https://github.com/arthur-cw/substrate'
 branch = 'substrate-cloudwalk-v1.0.2'
 
-[dependencies.frontier-template-runtime]
+[dependencies.cloudwalk-network-runtime]
 default-features = false
 features = ['std']
 path = '../runtime'

@@ -20,7 +20,7 @@ use std::sync::Arc;
 use clap::Parser;
 use fc_db::frontier_database_dir;
 use frame_benchmarking_cli::BenchmarkCmd;
-use frontier_template_runtime::Block;
+use cloudwalk_network_runtime::Block;
 use sc_cli::{ChainSpec, RuntimeVersion, SubstrateCli};
 use sc_service::{DatabaseSource, PartialComponents};
 
@@ -68,7 +68,7 @@ impl SubstrateCli for Cli {
 	}
 
 	fn native_runtime_version(_: &Box<dyn ChainSpec>) -> &'static RuntimeVersion {
-		&frontier_template_runtime::VERSION
+		&cloudwalk_network_runtime::VERSION
 	}
 }
 
@@ -215,7 +215,7 @@ pub fn run() -> sc_cli::Result<()> {
 			runner.sync_run(|config| {
 				let PartialComponents { client, other, .. } = service::new_partial(&config, &cli)?;
 				let frontier_backend = other.2;
-				cmd.run::<_, frontier_template_runtime::opaque::Block>(client, frontier_backend)
+				cmd.run::<_, cloudwalk_network_runtime::opaque::Block>(client, frontier_backend)
 			})
 		}
 		None => {

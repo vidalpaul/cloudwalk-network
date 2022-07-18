@@ -14,7 +14,7 @@ $ cargo build --release
 To execute the chain, run:
 
 ```
-$ ./target/debug/frontier-template-node --dev
+$ ./target/debug/cloudwalk-network-node --dev
 ```
 
 ### Docker Based Development
@@ -26,13 +26,13 @@ The Dockerfile is optimized for development speed.
 Building (takes 5-10 min):
 
 ```bash
-docker build -t frontier-node-dev .
+docker build -t cloudwalk-network-node-dev .
 ```
 
 Running (takes 1 min to rebuild binaries):
 
 ```bash
-docker run -t frontier-node-dev
+docker run -t cloudwalk-network-node-dev
 ```
 
 ## Genesis Configuration

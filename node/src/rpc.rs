@@ -27,7 +27,7 @@ use fc_rpc::{
 use fc_rpc_core::types::{FeeHistoryCache, FeeHistoryCacheLimit, FilterPool};
 use fp_storage::EthereumStorageSchema;
 // Runtime
-use frontier_template_runtime::{opaque::Block, AccountId, Balance, Hash, Index};
+use cloudwalk_network_runtime::{opaque::Block, AccountId, Balance, Hash, Index};
 
 /// Full client dependencies.
 pub struct FullDeps<C, P, A: ChainApi> {
@@ -159,7 +159,7 @@ where
 			client.clone(),
 			pool.clone(),
 			graph,
-			Some(frontier_template_runtime::TransactionConverter),
+			Some(cloudwalk_network_runtime::TransactionConverter),
 			network.clone(),
 			signers,
 			overrides.clone(),
