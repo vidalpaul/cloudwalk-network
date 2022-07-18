@@ -129,7 +129,7 @@ pub fn local_testnet_config() -> Result<ChainSpec, String> {
 	))
 }
 
-pub fn cloudwalk_mainnet_config() -> Result<ChainSpec, String> {
+pub fn cloudwalk_network_config() -> Result<ChainSpec, String> {
 	let wasm_binary = WASM_BINARY.ok_or_else(|| "Mainnet wasm not available".to_string())?;
 
 	let properties = json!({
@@ -140,12 +140,12 @@ pub fn cloudwalk_mainnet_config() -> Result<ChainSpec, String> {
 
 	Ok(ChainSpec::from_genesis(
 		// Name
-		"CloudWalk Mainnet",
+		"CloudWalk Network",
 		// ID
-		"cloudwalk_mainnet",
+		"cloudwalk_network",
 		ChainType::Live,
 		move || {
-			mainnet_genesis(
+			cloudwalk_network_genesis(
 				wasm_binary,
 				// Initial PoA authorities
 				vec![],
@@ -217,7 +217,7 @@ fn testnet_genesis(
 }
 
 /// Configure initial storage state for FRAME modules.
-fn mainnet_genesis(
+fn cloudwalk_network_genesis(
 	wasm_binary: &[u8],
 	initial_authorities: Vec<(AuraId, GrandpaId)>,
 	root_key: AccountId,
