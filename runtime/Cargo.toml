@@ -12,8 +12,8 @@ version = '0.0.0'
 targets = ['x86_64-unknown-linux-gnu']
 
 [build-dependencies.substrate-wasm-builder]
-branch = 'master'
-git = 'https://github.com/paritytech/substrate'
+branch = 'substrate-cloudwalk-v1.0.2'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.codec]
 default-features = false
@@ -23,116 +23,125 @@ version = '3.0.0'
 
 [dependencies.fp-rpc]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.fp-self-contained]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.frame-benchmarking]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 optional = true
 
 [dependencies.frame-executive]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.frame-support]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.frame-system]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.frame-system-benchmarking]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 optional = true
 
 [dependencies.frame-system-rpc-runtime-api]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-aura]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-balances]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-base-fee]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-dynamic-fee]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-ethereum]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-evm]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-evm-precompile-modexp]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-evm-precompile-sha3fips]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-evm-precompile-simple]
 default-features = false
-git = 'https://github.com/paritytech/frontier.git'
+git = 'https://github.com/arthur-cw/frontier.git'
+branch = 'frontier-cloudwalk-v1.0.2'
 
 [dependencies.pallet-grandpa]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-randomness-collective-flip]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-sudo]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-timestamp]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-transaction-payment]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.pallet-transaction-payment-rpc-runtime-api]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.scale-info]
 default-features = false
 features = ['derive']
-version = '2.0.0'
+version = '2.1.2'
 
 [dependencies.serde]
 features = ['derive']
@@ -140,65 +149,65 @@ optional = true
 version = '1.0.101'
 
 [dependencies.sp-api]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-block-builder]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-consensus-aura]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-core]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-inherents]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-io]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-offchain]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-runtime]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-session]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-std]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 version = '4.0.0'
 
 [dependencies.sp-transaction-pool]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 
 [dependencies.sp-version]
-branch = 'master'
+branch = 'substrate-cloudwalk-v1.0.2'
 default-features = false
-git = 'https://github.com/paritytech/substrate'
+git = 'https://github.com/arthur-cw/substrate'
 version = '5.0.0'
 
 [features]

@@ -18,16 +18,17 @@
 use std::sync::Arc;
 
 use clap::Parser;
+use fc_db::frontier_database_dir;
 use frame_benchmarking_cli::BenchmarkCmd;
 use frontier_template_runtime::Block;
 use sc_cli::{ChainSpec, RuntimeVersion, SubstrateCli};
-use sc_service::PartialComponents;
+use sc_service::{DatabaseSource, PartialComponents};
 
 use crate::{
 	chain_spec,
 	cli::{Cli, Subcommand},
 	command_helper::{inherent_benchmark_data, BenchmarkExtrinsicBuilder},
-	service::{self, frontier_database_dir},
+	service::{self, db_config_dir},
 };
 
 impl SubstrateCli for Cli {
@@ -131,9 +132,18 @@ pub fn run() -> sc_cli::Result<()> {
 			let runner = cli.create_runner(cmd)?;
 			runner.sync_run(|config| {
 				// Remove Frontier offchain db
-				let frontier_database_config = sc_service::DatabaseSource::RocksDb {
-					path: frontier_database_dir(&config),
-					cache_size: 0,
+				let db_config_dir = db_config_dir(&config);
+				let frontier_database_config = match config.database {
+					DatabaseSource::RocksDb { .. } => DatabaseSource::RocksDb {
+						path: frontier_database_dir(&db_config_dir, "db"),
+						cache_size: 0,
+					},
+					DatabaseSource::ParityDb { .. } => DatabaseSource::ParityDb {
+						path: frontier_database_dir(&db_config_dir, "paritydb"),
+					},
+					_ => {
+						return Err(format!("Cannot purge `{:?}` database", config.database).into())
+					}
 				};
 				cmd.run(frontier_database_config)?;
 				cmd.run(config.database)
@@ -193,7 +203,19 @@ pub fn run() -> sc_cli::Result<()> {
 							Arc::new(ext_builder),
 						)
 					}
+					BenchmarkCmd::Machine(cmd) => cmd.run(
+						&config,
+						frame_benchmarking_cli::SUBSTRATE_REFERENCE_HARDWARE.clone(),
+					),
 				}
+			})
+		}
+		Some(Subcommand::FrontierDb(cmd)) => {
+			let runner = cli.create_runner(cmd)?;
+			runner.sync_run(|config| {
+				let PartialComponents { client, other, .. } = service::new_partial(&config, &cli)?;
+				let frontier_backend = other.2;
+				cmd.run::<_, frontier_template_runtime::opaque::Block>(client, frontier_backend)
 			})
 		}
 		None => {
