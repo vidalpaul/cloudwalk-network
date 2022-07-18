@@ -1567,6 +1567,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "fc-cli"
+version = "1.0.0-dev"
+source = "git+https://github.com/arthur-cw/frontier.git?branch=frontier-cloudwalk-v1.0.2#6c6562fd3d63540e8bbfcd262e6093a1749e9003"
+dependencies = [
+ "clap",
+ "ethereum-types",
+ "fc-db",
+ "fp-rpc",
+ "fp-storage",
+ "sc-cli",
+ "sc-service",
+ "serde",
+ "serde_json",
+ "sp-api",
+ "sp-blockchain",
+ "sp-runtime",
+]
+
+[[package]]
 name = "fc-consensus"
 version = "2.0.0-dev"
 source = "git+https://github.com/arthur-cw/frontier.git?branch=frontier-cloudwalk-v1.0.2#6c6562fd3d63540e8bbfcd262e6093a1749e9003"
@@ -2071,6 +2090,7 @@ version = "0.0.0"
 dependencies = [
  "async-trait",
  "clap",
+ "fc-cli",
  "fc-consensus",
  "fc-db",
  "fc-mapping-sync",
@@ -2088,6 +2108,7 @@ dependencies = [
  "futures",
  "jsonrpc-core",
  "jsonrpc-pubsub",
+ "jsonrpsee",
  "log",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc",
