@@ -5,10 +5,10 @@ use frontier_template_runtime::{
 use sc_service::ChainType;
 use sc_telemetry::serde_json::json;
 use sp_consensus_aura::sr25519::AuthorityId as AuraId;
-use sp_core::{sr25519, Pair, Public, H160, U256};
+use sp_core::{sr25519, Pair, Public};
 use sp_finality_grandpa::AuthorityId as GrandpaId;
 use sp_runtime::traits::{IdentifyAccount, Verify};
-use std::{collections::BTreeMap, str::FromStr};
+use std::collections::BTreeMap;
 
 // The URL for the telemetry server.
 // const STAGING_TELEMETRY_URL: &str = "wss://telemetry.polkadot.io/submit/";
@@ -206,7 +206,7 @@ fn testnet_genesis(
 		},
 		evm: EVMConfig {
 			accounts: {
-				let mut map = BTreeMap::new();
+				let map = BTreeMap::new();
 				map
 			},
 		},
@@ -252,7 +252,7 @@ fn mainnet_genesis(
 		},
 		evm: EVMConfig {
 			accounts: {
-				let mut map = BTreeMap::new();
+				let map = BTreeMap::new();
 				map
 			},
 		},
