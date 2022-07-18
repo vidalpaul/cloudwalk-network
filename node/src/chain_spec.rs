@@ -1,4 +1,4 @@
-use frontier_template_runtime::{
+use cloudwalk_network_runtime::{
 	AccountId, AuraConfig, BalancesConfig, EVMConfig, EthereumConfig, GenesisConfig, GrandpaConfig,
 	Signature, SudoConfig, SystemConfig, WASM_BINARY,
 };
