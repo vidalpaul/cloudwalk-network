@@ -121,6 +121,8 @@ pub const MILLISECS_PER_BLOCK: u64 = 1000;
 
 pub const SLOT_DURATION: u64 = MILLISECS_PER_BLOCK;
 
+// pub const WEIGHT_PER_GAS: u64 = WEIGHT_PER_SECOND / GAS_PER_SECOND;
+
 // Time is measured by number of blocks.
 pub const MINUTES: BlockNumber = 60_000 / (MILLISECS_PER_BLOCK as BlockNumber);
 pub const HOURS: BlockNumber = MINUTES * 60;
@@ -145,7 +147,7 @@ parameter_types! {
 		::with_sensible_defaults(2 * WEIGHT_PER_SECOND, NORMAL_DISPATCH_RATIO);
 	pub BlockLength: frame_system::limits::BlockLength = frame_system::limits::BlockLength
 		::max_with_normal_ratio(5 * 1024 * 1024, NORMAL_DISPATCH_RATIO);
-	pub const SS58Prefix: u8 = 42;
+	pub const SS58Prefix: u16 = 2009;
 }
 
 // Configure FRAME pallets to include in runtime.
@@ -195,7 +197,7 @@ impl frame_system::Config for Runtime {
 	type AccountData = pallet_balances::AccountData<Balance>;
 	/// Weight information for the extrinsics of this pallet.
 	type SystemWeightInfo = ();
-	/// This is used as an identifier of the chain. 42 is the generic substrate prefix.
+	/// This is used as an identifier of the chain.
 	type SS58Prefix = SS58Prefix;
 	/// The set code logic, just the default since we're not a parachain.
 	type OnSetCode = ();
@@ -301,6 +303,8 @@ impl<F: FindAuthor<u32>> FindAuthor<H160> for FindAuthorTruncated<F> {
 
 parameter_types! {
 	pub const ChainId: u64 = 2009;
+	// pub BlockGasLimit: U256 = U256::from(NORMAL_DISPATCH_RATIO * MAXIMUM_BLOCK_WEIGHT / WEIGHT_PER_GAS);
+	// 										0.75 * (2 * 1_000_000_000_000) / 20_000
 	pub BlockGasLimit: U256 = U256::from(u32::max_value());
 	pub PrecompilesValue: FrontierPrecompiles<Runtime> = FrontierPrecompiles::<_>::new();
 }
