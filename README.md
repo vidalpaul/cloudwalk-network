@@ -1,7 +1,8 @@
 # CloudWalk Network Node
 ![cloudwalk-cover.png](./media/cloudwalk-cover.png)
 
-![example branch parameter](https://github.com/cloudwalk/cloudwalk-network/actions/workflows/rust.yml/badge.svg?branch=master)
+![example branch parameter](https://github.com/cloudwalk/cloudwalk-network/actions/workflows/test.yml/badge.svg?branch=master)
+![example branch parameter](https://github.com/cloudwalk/cloudwalk-network/actions/workflows/check.yml/badge.svg?branch=master)
 
 A [FRAME](https://substrate.dev/docs/en/next/conceptual/runtime/frame)-based PoA network with Ethereum-like capabilities.
 
