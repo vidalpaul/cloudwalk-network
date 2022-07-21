@@ -1,5 +1,8 @@
-# CloudWalk Network Node
-![cloudwalk-cover.png](./media/cloudwalk-cover.png)
+# CloudWalk Network Node 
+
+<p align="center">
+  <img src="/docs/media/cloudwalk-cover.png">
+</p>
 
 ![example branch parameter](https://github.com/cloudwalk/cloudwalk-network/actions/workflows/test.yml/badge.svg?branch=master)
 ![example branch parameter](https://github.com/cloudwalk/cloudwalk-network/actions/workflows/check.yml/badge.svg?branch=master)
