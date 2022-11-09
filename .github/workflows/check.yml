@@ -10,16 +10,22 @@ on:
 
 jobs:
   check:
-    name: ubuntu-latest
-    runs-on: ubuntu-latest
+    name: ubuntu-20.04
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: setup
       uses: actions-rs/toolchain@v1
       with:
         profile: minimal
-        toolchain: nightly-2022-05-02
+        toolchain: nightly-2022-11-06
         target: wasm32-unknown-unknown
         override: true
+    - name: show toolchain
+      run: rustup show
+    - name: check
+      run: cargo check --release
     - name: check with runtime-benchmarks
       run: cargo check --release --features=runtime-benchmarks
+    - name: check with evm-tracing
+      run: cargo check --release --features evm-tracing
